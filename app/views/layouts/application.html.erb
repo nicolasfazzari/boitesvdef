@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  
+  <%= csrf_meta_tags %>
+  
+ 
+  <meta name="viewport" content="width=devise-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body >
+
+  
+   <div id="main_content">
+    <div id="header">
+        <%= image_tag("logo.png", :alt => "logo SOCOM5", height: '50',) %>
+     
+        <div class="buttons">
+          <% if user_signed_in? %>
+            <div class="buttons">
+              <%= link_to 'Déconnexion', destroy_user_session_path, :method => :delete, class: "button" %>
+                 <% if current_user.admin? %>
+                  <%= link_to "Admin", rails_admin_path, class: "button" %>
+                  <% end %>
+            </div>
+          <% else %>
+            <div class="buttons">
+              <%= link_to "Connexion", user_session_path, class: "button" %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+      
+      <% flash.each do |name, msg| %>
+         <div class="flash text-center">
+            <%= content_tag(:div, msg, class: "alert alert-info") %>
+          </div>
+      <% end %>
+
+	<%= yield %>
+
+
+</body>
+</html>

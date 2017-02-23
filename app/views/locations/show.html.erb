@@ -1,0 +1,62 @@
+<script src="//maps.google.com/maps/api/js?key=AIzaSyDeke36oc9yOjKSNCf02bsEKczP2ryvkdQ"></script>
+<script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+<div id="post_content">
+	<br>
+	  <div class="row" >
+	    
+	    <div class="col-xs-12 col-md-6">
+	        <div id="post_info">
+	        		<h3>Information :</h3>
+	        		<p>
+					  <strong>Nom:</strong>
+					  <%= @location.name %>
+					</p>
+
+	              	<p>
+					  <strong>Address:</strong>
+					  <%= @location.address %>
+					</p>
+
+					<p>
+					  <strong>Code postal:</strong>
+					  <%= @location.zip %>
+					</p>
+
+					<p>
+					  <strong>Ville:</strong>
+					  <%= @location.city %>
+					</p>
+
+					<p>
+					  <strong>Téléphone:</strong>
+					  <%= @location.phone %>
+					</p>		
+	        </div>
+	    </div>
+
+	    <div class="col-xs-12 col-md-6">
+	    	<div id="post_info">
+  				<div id="map" style='width: 100%; height: 400px;'></div>
+			</div>
+	  	</div>
+	</div>
+
+
+	<div class="row" ><br><br><br>
+		<div class="col-xs-12 col-md-6">
+			<%= link_to 'Retour', root_path, class: "button" %>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript">
+	
+	 	handler = Gmaps.build('Google');
+		handler.buildMap({ provider: {maxZoom:17, minZoom:5}, internal: {id: 'map'}}, function(){
+	  		markers = handler.addMarkers(<%=raw @hash.to_json %>);
+	  		handler.bounds.extendWith(markers);
+	  		handler.fitMapToBounds();
+		});
+		
+</script>

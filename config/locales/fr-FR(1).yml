@@ -1,0 +1,70 @@
+fr-FR:
+  ransack:
+    all: tout
+    and: et
+    any: au moins un
+    asc: croissant
+    attribute: attribut
+    combinator: combinateur
+    condition: critère
+    desc: décroissant
+    or: ou
+    predicate: predicat
+    predicates:
+      blank: est vide
+      cont: contient
+      cont_all: contient tous
+      cont_any: 'contient '
+      does_not_match: ne correspond pas à
+      does_not_match_all: ne respecte pas tous
+      does_not_match_any: ne respecte que certains
+      end: se termine par
+      end_all: finit avec tous
+      end_any: finit avec un
+      eq: est égal à
+      eq_all: "égal à tous"
+      eq_any: "égal à un"
+      'false': est faux
+      gt: est supérieur à
+      gt_all: supérieur à tous
+      gt_any: supérieur à un
+      gteq: supérieur ou égal
+      gteq_all: supérieur ou égal à tous
+      gteq_any: supérieur ou égale à un
+      in: dans
+      in_all: dans tous
+      in_any: dans un
+      lt: est inférieur à
+      lt_all: moins que tous
+      lt_any: inférieur à chaque
+      lteq: est inférieur ou égal à
+      lteq_all: inférieur ou égal à tous
+      lteq_any: inférieur ou égal à l'un d'entre tous
+      matches: correspond à
+      matches_all: respect tous
+      matches_any: respect certains
+      not_cont: ne contient pas
+      not_cont_all: ne contient pas tous
+      not_cont_any: ne contient que certains
+      not_end: ne termine pas par
+      not_end_all: ne terminer pas par tous
+      not_end_any: ne termine pas par certains
+      not_eq: n'est pas égal à
+      not_eq_all: pas égal à tous
+      not_eq_any: pas égal à certains
+      not_in: pas dans
+      not_in_all: pas dans tous
+      not_in_any: pas dans certains
+      not_null: n'est pas nul
+      not_start: ne commence pas par
+      not_start_all: ne commence par par tous
+      not_start_any: ne commence qu'avec certains
+      'null': est nul
+      present: est présent
+      start: commence par
+      start_all: commence par tous
+      start_any: commence par certains
+      'true': est vrai
+    search: rechercher
+    sort: trier
+    value: valeur
