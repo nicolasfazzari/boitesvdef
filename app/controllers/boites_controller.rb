@@ -5,7 +5,7 @@ class BoitesController < ApplicationController
   # GET /boites.json
   def index
    if params[:distance].present? && (params[:distance].to_i > 0)
-      @search = Boite.near("BOURG-EN-BRESSE", params[:distance] || 100).search(params[:q])
+      @search = Boite.near(params[:search], params[:distance] || 100).search(params[:q])
       @boites= @search.result.paginate(:page => params[:page], :per_page => 30)
       respond_to do |format|
         format.html
