@@ -1,5 +1,12 @@
 class Boite < ActiveRecord::Base
 
+	geocoded_by :commune
+	geocoded_by :full_address
+	after_validation :geocode, if: ->(obj){ !obj.latitude.present? }
+
+	def full_address
+		"#{departement},#{zip},#{commune}"
+	end
 
 	
 
