@@ -106,7 +106,7 @@ class BoitesController < ApplicationController
   protected
     # GENERATE A GENERIC SESSION KEY BASED ON TEH CONTROLLER NAME
     def search_key
-      "#{location}_search".to_sym
+      "#{boite}_search".to_sym
     end
 
 
