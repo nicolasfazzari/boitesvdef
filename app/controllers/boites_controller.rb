@@ -14,7 +14,6 @@ class BoitesController < ApplicationController
     else 
      @search = Boite.search(search_params)
      @boites = @search.result.paginate(:page => params[:page], :per_page => 30)
-     @total = @boites.sum(:boite)
 
      #  @search.build_condition if @search.conditions.empty?
      @search.build_sort if @search.sorts.empty?
